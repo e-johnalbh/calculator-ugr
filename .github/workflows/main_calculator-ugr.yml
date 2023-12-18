@@ -19,14 +19,17 @@ jobs:
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '8.x'
-          include-prerelease: true
+          dotnet-version: 8.x'  
+          include-prerelease: false  
+
+      - name: Restore dependencies
+        run: dotnet restore bdd.workshop.calculator.web/bdd.workshop.calculator.web.csproj
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build bdd.workshop.calculator.web/bdd.workshop.calculator.web.csproj --no-restore --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish bdd.workshop.calculator.web/bdd.workshop.calculator.web.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -53,5 +56,5 @@ jobs:
         with:
           app-name: 'calculator-ugr'
           slot-name: 'Production'
-          package: .
+          package: ${{env.DOTNET_ROOT}}/myapp
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_159CE88C5329438BA2218495C85D4026 }}
