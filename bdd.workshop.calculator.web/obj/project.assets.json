@@ -1,0 +1,93 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "bdd.workshop.calculator/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/bdd.workshop.calculator.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/bdd.workshop.calculator.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "bdd.workshop.calculator/1.0.0": {
+      "type": "project",
+      "path": "../bdd.workshop.calculator/bdd.workshop.calculator.csproj",
+      "msbuildProject": "../bdd.workshop.calculator/bdd.workshop.calculator.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "bdd.workshop.calculator >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/johnalbh/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/johnalbh/PersonalProjects/calculadora/bdd.workshop.calculator.web/bdd.workshop.calculator.web.csproj",
+      "projectName": "bdd.workshop.calculator.web",
+      "projectPath": "/Users/johnalbh/PersonalProjects/calculadora/bdd.workshop.calculator.web/bdd.workshop.calculator.web.csproj",
+      "packagesPath": "/Users/johnalbh/.nuget/packages/",
+      "outputPath": "/Users/johnalbh/PersonalProjects/calculadora/bdd.workshop.calculator.web/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/johnalbh/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "/usr/local/share/dotnet/library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "/Users/johnalbh/PersonalProjects/calculadora/bdd.workshop.calculator/bdd.workshop.calculator.csproj": {
+              "projectPath": "/Users/johnalbh/PersonalProjects/calculadora/bdd.workshop.calculator/bdd.workshop.calculator.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
