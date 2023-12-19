@@ -30,6 +30,35 @@
         padding: 10 px;  
     }   
     </style>  
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var buttons = document.querySelectorAll('.btn');
+                buttons.forEach(function (button) {
+                    button.addEventListener('click', function () {
+                        document.getElementById('txtNumber').value += this.value;
+                    });
+                });
+            });
+        </script>
+
+        <script>
+            document.getElementById('txtNumber').addEventListener('keydown', function (event) {
+                var key = event.key;
+                if (key === '=') {
+                    // Envía el formulario cuando se presiona la tecla '='
+                    event.preventDefault(); // Prevenir el comportamiento por defecto de la tecla
+                    this.form.submit(); // Enviar el formulario
+                } else if (key >= '0' && key <= '9') {
+                    // Permitir ingreso de números
+                } else {
+                    // Prevenir ingreso de otros caracteres
+                    event.preventDefault();
+                }
+            });
+        </script>
+
+
+
     <div align="center">  
         @using (Html.BeginForm()) {  
         <table>  

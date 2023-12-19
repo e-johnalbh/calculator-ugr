@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "y7MVTE80D0a9cwEnlVir+vBfWUrNsoaEyf8TU8NNiz4UCQFBYAbntrUUcVMdyaqfrnpQwbt26PZJHHxjsO7ldw==",
+  "dgSpecHash": "AH1/VPGLKMlSqc71Sy5UQSGYlT1N3ZRhwq6/V7MOh4rOma9AZ5qQNq/6TObbuzPfeBZ/znAbt+7BJHPadqYwxQ==",
   "success": true,
-  "projectFilePath": "/Users/johnalbh/PersonalProjects/calculadora/bdd.workshop.calculator/bdd.workshop.calculator.csproj",
-  "expectedPackageFiles": [
-    "/Users/johnalbh/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
-    "/Users/johnalbh/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Education\\UGR\\DS\\calculator-ugr\\bdd.workshop.calculator\\bdd.workshop.calculator.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
