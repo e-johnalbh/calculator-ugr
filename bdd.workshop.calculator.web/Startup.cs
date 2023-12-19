@@ -46,7 +46,7 @@ namespace bdd.workshop.calculator.web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Calculator}/{action=Index}/{id?}");
             });
         }
     }
