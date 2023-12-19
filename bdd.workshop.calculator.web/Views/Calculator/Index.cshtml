@@ -58,8 +58,9 @@
         buttons.forEach(function (button) {
             button.addEventListener('click', function () {
                 var txtNumber = document.getElementById('txtNumber');
-                txtNumber.value += this.value;
-                if (this.value === '=') {
+                if (this.value !== '=') {
+                    txtNumber.value += this.value;
+                } else {
                     document.getElementById('hiddenInput').value = txtNumber.value;
                     txtNumber.form.submit();
                 }
@@ -67,11 +68,14 @@
         });
 
         document.getElementById('txtNumber').addEventListener('keydown', function (event) {
-            if (event.key === 'Enter') {
+            if (event.key === 'Enter' || event.key === '=' || event.keyCode === 187) {
                 event.preventDefault();
                 document.getElementById('hiddenInput').value = this.value;
                 this.form.submit();
+            } else if (event.key === 'Backspace') {
+                this.value = this.value.slice(0, -1);
             }
         });
     });
 </script>
+

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("bdd.workshop.calculator.web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ac6d88c93d555dc0909b8981353b0c9a2f7145d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f08a9344af6160d096b87a222c8fc7366d7252c")]
 [assembly: System.Reflection.AssemblyProductAttribute("bdd.workshop.calculator.web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("bdd.workshop.calculator.web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
