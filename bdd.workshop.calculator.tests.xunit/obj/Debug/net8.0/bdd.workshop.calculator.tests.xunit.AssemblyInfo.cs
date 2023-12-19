@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("bdd.workshop.calculator.tests.xunit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+96e5d1bd29499d518bc3c43c3a5df313444fa752")]
 [assembly: System.Reflection.AssemblyProductAttribute("bdd.workshop.calculator.tests.xunit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("bdd.workshop.calculator.tests.xunit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
