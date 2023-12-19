@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 namespace bdd.workshop.calculator.web.Controllers
 {
@@ -16,28 +14,67 @@ namespace bdd.workshop.calculator.web.Controllers
         [HttpPost]
         public IActionResult Operate(Models.Calculator calculator)
         {
-            ViewData["a"] = calculator.A;
-            ViewData["b"] = calculator.B;
-            ViewData["operation"] = calculator.Command;
-            switch (calculator.Command)
-            {
-                case ("+"):
-                    ViewData["result"] = Operator.Add(calculator.A, calculator.B);
-                    break;
-                case ("-"):
-                    ViewData["result"] = Operator.Substract(calculator.A, calculator.B);
-                    break;
-                case ("x"):
-                    ViewData["result"] = Operator.Multiply(calculator.A, calculator.B);
-                    break;
-                case ("/"):
-                    ViewData["result"] = Operator.Divide(calculator.A, calculator.B);
-                    break;
-                default:
+            char operation = calculator.Input.FirstOrDefault(c => "+-x/√".Contains(c));
+            var parts = calculator.Input.Split(operation);
 
-                    break;
+            if (operation == '√')
+            {
+                if (parts.Length == 2 && double.TryParse(parts[1], out double radicand))
+                {
+                    ViewData["a"] = radicand;
+                    ViewData["operation"] = "√";
+                    ViewData["result"] = Math.Sqrt(radicand); 
+                }
+                else
+                {
+                    ViewData["result"] = "Entrada inválida para la raíz cuadrada";
+                }
             }
+            else if (parts.Length == 2 && int.TryParse(parts[0], out int a) && int.TryParse(parts[1], out int b))
+            {
+                calculator.A = a;
+                calculator.B = b;
+                calculator.Command = operation.ToString();
+
+                ViewData["a"] = a;
+                ViewData["b"] = b;
+                ViewData["operation"] = operation;
+
+                switch (operation)
+                {
+                    case '+':
+                    ViewData["result"] = Operator.Add(a, b);
+                    break;
+                    case '-':
+                    ViewData["result"] = Operator.Substract(a, b);
+                    break;
+                    case 'x':
+                    ViewData["result"] = Operator.Multiply(a, b);
+                    break;
+                    case '/':
+                    if (b != 0)
+                    {
+                        ViewData["result"] = Operator.Divide(a, b);
+                    }
+                    else
+                    {
+                        ViewData["result"] = "Error: División por cero";
+                    }
+                    break;
+                    default:
+                    ViewData["result"] = "Operación no válida";
+                    break;
+                }
+            }
+            else
+            {
+                ViewData["result"] = "Entrada inválida";
+            }
+
             return View();
         }
+
+
+
     }
 }
